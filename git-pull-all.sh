@@ -17,7 +17,7 @@ function gitPullAllTrackedBranches() {
     git add . > /dev/null 2>&1
     git stash > /dev/null 2>&1
 
-    branches=`git branch`
+    branches=`git branch | tr -d '\*' | sed 's/^[ \t]*//'`
     for brname in "${branches[@]}"; do
 
         # Check if `$brname` has a tracked remote branch that can be pulled.

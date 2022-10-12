@@ -10,7 +10,7 @@ $1: REMOTE: Optional: Remote name to pull all the branches from.
 function gitPullAllTrackedBranches() {
 
     # Default `$REMOTE` value is "origin".
-    REMOTE="${1:-'origin'}"
+    REMOTE="${1:-origin}"
 
     # DEBUG
     echo "DEBUG REMOTE: $REMOTE"
@@ -20,7 +20,7 @@ function gitPullAllTrackedBranches() {
     git add . > /dev/null 2>&1
     git stash > /dev/null 2>&1
 
-    branches=`git branch`
+    branches=`git branch | tr -d '\*' | sed 's/^[ \t]*//'`
     for brname in "${branches[@]}"; do
 
         # DEBUG

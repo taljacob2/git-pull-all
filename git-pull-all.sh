@@ -29,8 +29,8 @@ function gitPullAllTrackedBranches() {
             `$brnameTrackStatus` is NOT empty. Thus `$brname` has a tracked
             remote branch, that can be pulled.
             '
-            git checkout branch
-            git pull          
+            git checkout $brname
+            git pull
         fi
         
     done

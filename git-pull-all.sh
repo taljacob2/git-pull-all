@@ -10,7 +10,7 @@ $1: REMOTE: Optional: Remote name to pull all the branches from.
 function gitPullAllTrackedBranches() {
 
     # Default `$REMOTE` value is "origin".
-    REMOTE="${1:-'origin'}"
+    REMOTE="${1:-origin}"
 
     HEAD_NAME=$(git symbolic-ref --short HEAD)
 

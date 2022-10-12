@@ -14,8 +14,8 @@ function gitPullAllTrackedBranches() {
 
     HEAD_NAME=$(git symbolic-ref --short HEAD)
 
-    git add .
-    git stash
+    git add . > /dev/null 2>&1
+    git stash > /dev/null 2>&1
 
     for brname in `git branch -r | grep $REMOTE | grep -v /HEAD | awk '{gsub(/^[^\/]+\//,"",$1); print $1}'`; do
 
@@ -34,9 +34,9 @@ function gitPullAllTrackedBranches() {
         
     done
 
-    git checkout $HEAD_NAME
+    git checkout $HEAD_NAME > /dev/null 2>&1
 
-    git stash pop
+    git stash pop > /dev/null 2>&1
 }
 
 # ---------------------------------- Code -------------------------------------

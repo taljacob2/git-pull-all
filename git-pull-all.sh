@@ -7,7 +7,7 @@ Parameters:
 $1: REMOTE: Optional: Remote name to pull all the branches from.
             The default value is "origin".
 '
-function gitPullAllTrackedBranches {
+function gitPullAllTrackedBranches() {
 
     # Default `$REMOTE` value is "origin".
     REMOTE="${1:-'origin'}"
@@ -38,3 +38,7 @@ function gitPullAllTrackedBranches {
 
     git stash pop
 }
+
+# ---------------------------------- Code -------------------------------------
+
+gitPullAllTrackedBranches "$1"

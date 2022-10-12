@@ -1,3 +1,4 @@
+#!/bin/bash
 
 : '
 Description:
@@ -20,7 +21,12 @@ function gitPullAllTrackedBranches() {
     git add . > /dev/null 2>&1
     git stash > /dev/null 2>&1
 
-    branches=`git branch | tr -d '\*' | sed 's/^[ \t]*//'`
+    # Get all branches as a long string.
+    branchesAsString=`git branch | tr -d '\*' | sed 's/^[ \t]*//'`
+
+    # Convert `$branchesAsString` to a list of branches.    
+    mapfile -t branches <<< "$branchesAsString"
+
     for brname in "${branches[@]}"; do
 
         # DEBUG

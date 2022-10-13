@@ -18,6 +18,10 @@ function gitPullAllTrackedBranches() {
 
     git fetch $REMOTE
 
+    # In case `git fetch` did not succeed, then exit.
+    status=$?
+    [ $status -ne 0 ] && exit "$status"
+
     echo
 
     # Log print.

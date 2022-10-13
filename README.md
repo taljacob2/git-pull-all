@@ -21,8 +21,10 @@ git config alias.pull-all '!sh ./git-pull-all/git-pull-all.sh "${args[@]}"'
 ## How To Use
 
 ```
-git pull-all [REMOTE-NAME]
+git pull-all [<repository>]
 ```
+
+> `<repository>` is the "remote" repository that is the source of a fetch or pull operation. This parameter can be either a URL or the name of a remote. The default value is `origin`.
 
 ## Check For Updates
 

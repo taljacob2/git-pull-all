@@ -14,6 +14,13 @@ function gitPullAllTrackedBranches() {
     REMOTE="${1:-origin}"
 
     # Log print.
+    echo "Fetching all '$REMOTE' tracked branches..."
+
+    git fetch $REMOTE
+
+    echo
+
+    # Log print.
     echo "Pulling all '$REMOTE' tracked branches..."
 
     HEAD_NAME=$(git symbolic-ref --short HEAD)

@@ -55,7 +55,7 @@ function gitPullAllTrackedBranches() {
 
     echo
 
-    git checkout $HEAD_NAME > /dev/null 2>&1
+    git checkout $HEAD_NAME
 
     git stash pop > /dev/null 2>&1
 }

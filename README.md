@@ -2,6 +2,16 @@
 
 # git-pull-all
 
+An addition for `git pull`, to be able to pull at once all the *local* branches
+that are being tracked by *remote* branches. So the user won't have to manually
+`git checkout` & `git pull` them one by one.
+
+## Why Use `git pull-all`
+
+In case your project contains multiple branches that are constantly updating
+remotely and you want to `git fetch` and `git pull` them all at once,
+then this tool will save you the effort for doing so manually.
+
 ## Installation
 
 ### Clone This Repository As A Subtree In Your Project
